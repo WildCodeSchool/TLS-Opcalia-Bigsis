@@ -1,21 +1,34 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import SignUP from "./Components/SignUP";
+import SignIN from "./Components/SignIN";
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <View>
+          <SignUP />
+        </View>
+        <View>
+          <SignIN />
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  White: {
+    // Define your HEX color code here.
+    color: "#1C2938"
+  },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: "#FFF",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: "20%"
+  }
 });
+export default App;
