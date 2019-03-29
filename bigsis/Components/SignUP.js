@@ -46,7 +46,7 @@ class SignUP extends Component {
 
     return (
       <Container>
-        <Content>
+        <Content style={{flex:1}}>
           <View style={{ alignItems: "center", justifyContent: "center", }}>
             <Image
               style={{ width: 175, height: 175 }}
@@ -56,19 +56,19 @@ class SignUP extends Component {
           </View>
 
           <Form>
-            <Item floatingLabel style={[styles.style, { marginTop: 20, }]}>
+            <Item floatingLabel style={[styles.style, {  }]}>
               <Label style={{textAlign: 'center',color:'white',}}>Nom d'utilisateur</Label>
               <Input onChangeText={(text) => this.account(text)} style={styles.texte}  />
             </Item>
-            <Item floatingLabel style={[styles.style, { marginTop: 20}]}>
+            <Item floatingLabel style={[styles.style, { marginTop: 17}]}>
             <Label style={{textAlign: 'center',color:'white'}}>Adresse Mail</Label>
             <Input onChangeText={(text) => this.email(text)} style={styles.texte}  />
             </Item>
-            <Item floatingLabel style={[styles.style, { marginTop: 20 }]}>
+            <Item floatingLabel style={[styles.style, { marginTop: 17 }]}>
             <Label style={{textAlign: 'center',color:'white',}}>Mot de passe</Label>
             <Input secureTextEntry={true} onChangeText={(text) => this.password(text)} style={styles.texte}  />
             </Item>
-            <Item floatingLabel style={[styles.style, { marginTop: 20 }]}>
+            <Item floatingLabel style={[styles.style, { marginTop: 17 }]}>
             <Label style={{textAlign: 'center',color:'white',}}>Mot de passe confirmation</Label>
 
             <Input secureTextEntry={true} onChangeText={(text) => this.confirmpassword(text)} style={styles.texte}  />

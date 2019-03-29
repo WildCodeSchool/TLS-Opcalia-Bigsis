@@ -29,9 +29,9 @@ class SignIN extends Component {
   render() {
 console.log(this.props)
     return (
-      <Container>
+      <Container style={{flex:1}}>
         <Content>
-          <View style={{ alignItems: "center", justifyContent: "center" }}>
+          <View style={{ flex:1,alignItems: "center", justifyContent: "center" }}>
             <Image
               style={{ width: 200, height: 200 }}
               source={{ uri: "https://image.noelshack.com/fichiers/2019/13/4/1553784675-project.png" }}
@@ -41,23 +41,23 @@ console.log(this.props)
           </View>
 
           <Form>
-            <Item style={[styles.style, { marginTop: 20 }]}>
+            <Item style={[styles.style, {marginTop:5 }]}>
               <Input onChangeText={(text) => this.account(text)} style={styles.texte} placeholder="Nom de compte" />
             </Item>
             <Item style={[styles.style, { marginTop: 20 }]}>
               <Input onChangeText={(text) => this.password(text)} style={styles.texte} placeholder="Mot de passe" />
             </Item>
-            <View style={{ marginTop: 20, flexDirection: "row", justifyContent: "center" }}>
-              <Button onPress={() => console.log(this.state)} rounded style={{}}>
-                <Text style={{ fontSize: 15, color: 'white', marginLeft: 10, marginRight: 10 }}>Connection</Text>
+            <View style={{flex:1,marginTop:7,  flexDirection: "row", justifyContent: "center" }}>
+              <Button onPress={() => this.props.navigation.navigate("Map")} rounded style={{}}>
+                <Text style={{ color: 'white', marginLeft: 10, marginRight: 10 }}>Connection</Text>
               </Button>
 
 
             </View>
-            <View style={{ marginTop: 20, flexDirection: "row", justifyContent: "center" }}>
+            <View style={{ flex:1,marginTop: 20, flexDirection: "row", justifyContent: "center" }}>
               <Button rounded block danger
                 onPress={() => this.props.navigation.navigate("Register")}
-                style={{ marginTop: 15 }}>
+                style={{ marginTop: 0 }}>
                 <Text style={{ fontSize: 15, color: 'white', marginLeft: 10, marginRight: 10 }}>-- Inscription --</Text>
               </Button>
             </View>
