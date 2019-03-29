@@ -1,47 +1,95 @@
 import React, { Component } from "react";
-import { Button, TextInput, View } from "react-native";
-
+import { Container, Content, Form, Item, Input, Label, View, Button, Icon, Body, CheckBox, ListItem } from 'native-base';
+import { Image, StyleSheet, Text } from 'react-native'
+import { connect } from 'react-redux'
 class SignIN extends Component {
   constructor(props) {
     super(props);
     this.state = {
       nickname: "",
       password: ""
+
     };
+
   }
-  handleChange = event => {
-    console.log(event.target.name);
-    console.log(event.target.value);
-    this.setState({ [event.target.name]: event.target.value });
-  };
 
-  handleSubmit = () => {
-    const { user } = this.props;
-    if (user) {
-    } else {
-    }
-  };
+
+  account(text) {
+    this.setState({ nickname: text })
+
+  }
+  password(text) {
+    this.setState({ password: text })
+
+  }
+
+
+
+
   render() {
-    return (
-      <View>
-        <TextInput
-          required
-          type="pseudo"
-          name="nickname"
-          onChange={this.handleChange}
-          placeholder={"your pseudo"}
-        />
 
-        <TextInput
-          required
-          type="password"
-          name="password"
-          onChange={this.handleChange}
-          placeholder={"your password"}
-        />
-        <Button title={"confirm"} onPress={this.handleSubmit} />
-      </View>
+    return (
+      <Container>
+        <Content>
+          <View style={{ alignItems: "center", justifyContent: "center" }}>
+            <Image
+              style={{ width: 200, height: 200 }}
+              source={{ uri: "https://image.noelshack.com/fichiers/2019/13/4/1553784675-project.png" }}
+            />
+            <Text style={{ fontSize: 60, fontStyle: "italic" }}>BigSis</Text>
+
+          </View>
+
+          <Form>
+            <Item style={[styles.style, { marginTop: 20 }]}>
+              <Input onChangeText={(text) => this.account(text)} style={styles.texte} placeholder="Nom de compte" />
+            </Item>
+            <Item style={[styles.style, { marginTop: 20 }]}>
+              <Input onChangeText={(text) => this.password(text)} style={styles.texte} placeholder="Mot de passe" />
+            </Item>
+            <View style={{ marginTop: 20, flexDirection: "row", justifyContent: "center" }}>
+              <Button onPress={() => console.log(this.state)} rounded style={{}}>
+                <Text style={{ fontSize: 15, color: 'white', marginLeft: 10, marginRight: 10 }}>Connection</Text>
+              </Button>
+
+
+            </View>
+            <View style={{ marginTop: 20, flexDirection: "row", justifyContent: "center" }}>
+              <Button rounded block danger
+                onPress={() => this.props.navigation.navigate("Register")}
+                style={{ marginTop: 15 }}>
+                <Text style={{ fontSize: 15, color: 'white', marginLeft: 10, marginRight: 10 }}>-- Inscription --</Text>
+              </Button>
+            </View>
+
+
+          </Form>
+        </Content>
+      </Container>
     );
   }
 }
-export default SignIN;
+const styles = StyleSheet.create({
+  style: {
+    backgroundColor: 'black',
+    width: 300,
+    marginLeft: 35,
+    borderRadius: 10
+  },
+  texte: {
+    color: 'white',
+    marginLeft: 20
+  },
+  h1: {
+
+  }
+})
+
+
+const mapStateToProps = (ReduxState) => {
+  return {
+    afficheProps: ReduxState
+  }
+}
+
+export default SignIN

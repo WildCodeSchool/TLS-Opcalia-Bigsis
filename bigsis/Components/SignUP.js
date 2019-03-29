@@ -1,64 +1,109 @@
 import React, { Component } from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, Text, TextInput, Image, } from "react-native";
+import { Container, Content, Form, Item, Input, Label, View, Button, Icon, Body, CheckBox, ListItem } from 'native-base';
+
 
 class SignUP extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
+      
       nickname: "",
+      email: "",
       password: "",
       confirmPass: "",
       equalPassword: "",
-      errorMessage: ""
+      errorMessage: "",
+
     };
+    this.woman = false;
+    this.men = false;
   }
-  handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
-  handleSubmit = () => {
-    const {user} = this.props;
-    if (user) {
-    } else {
-    }
-  };
+ 
+ 
+  account(text) {
+    this.setState({ nickname: text })
+
+  }
+  email(text) {
+    this.setState({ email: text })
+
+  }
+  password(text) {
+    this.setState({ password: text })
+
+  }
+  confirmpassword(text) {
+    this.setState({ confirmPass: text })
+
+  }
+
+
+
   render() {
+
+
+
     return (
-      <View>
-        <TextInput
-          required
-          type="email"
-          name="email"
-          onChange={this.handleChange}
-          placeholder={"yourmail@mail.com"}
-        />
+      <Container>
+        <Content>
+          <View style={{ alignItems: "center", justifyContent: "center", }}>
+            <Image
+              style={{ width: 175, height: 175 }}
+              source={{ uri: "https://image.noelshack.com/fichiers/2019/13/4/1553784675-project.png" }}
+            />
 
-        <TextInput
-          required
-          type="pseudo"
-          name="nickname"
-          onChange={this.handleChange}
-          placeholder={"your pseudo"}
-        />
+          </View>
 
-        <TextInput
-          required
-          type="password"
-          name="password"
-          onChange={this.handleChange}
-          placeholder={"your password"}
-        />
+          <Form>
+            <Item floatingLabel style={[styles.style, { marginTop: 20, }]}>
+              <Label style={{textAlign: 'center',color:'white',}}>Nom d'utilisateur</Label>
+              <Input onChangeText={(text) => this.account(text)} style={styles.texte}  />
+            </Item>
+            <Item floatingLabel style={[styles.style, { marginTop: 20}]}>
+            <Label style={{textAlign: 'center',color:'white'}}>Adresse Mail</Label>
+            <Input onChangeText={(text) => this.email(text)} style={styles.texte}  />
+            </Item>
+            <Item floatingLabel style={[styles.style, { marginTop: 20 }]}>
+            <Label style={{textAlign: 'center',color:'white',}}>Mot de passe</Label>
+            <Input secureTextEntry={true} onChangeText={(text) => this.password(text)} style={styles.texte}  />
+            </Item>
+            <Item floatingLabel style={[styles.style, { marginTop: 20 }]}>
+            <Label style={{textAlign: 'center',color:'white',}}>Mot de passe confirmation</Label>
 
-        <TextInput
-          required
-          type="password"
-          name="confirmPass"
-          onChange={this.handleChange}
-          placeholder={"Confirm your password"}
-        />
-        <Button title={"confirm"} onPress={this.handleSubmit} />
-      </View>
+            <Input secureTextEntry={true} onChangeText={(text) => this.confirmpassword(text)} style={styles.texte}  />
+            </Item>
+            
+            <View style={{ marginTop: 20, flexDirection: "row", justifyContent: "center" }}>
+              <Button onPress={() => {console.log(this.state),this.props.navigation.navigate("Accueil")}} rounded style={{}}>
+                <Text style={{ fontSize: 15, color: 'white', marginLeft: 10, marginRight: 10 }}>-- Inscription --</Text>
+              </Button>
+
+
+            </View>
+
+
+
+          </Form>
+        </Content>
+      </Container>
     );
   }
 }
+const styles = StyleSheet.create({
+  style: {
+    backgroundColor: 'black',
+    width: 300,
+    marginLeft: 35,
+    borderRadius: 10
+  },
+  texte: {
+    color: 'white',
+    textAlign: 'center'
+  },
+  h1: {
+
+  }
+})
+
 export default SignUP;
