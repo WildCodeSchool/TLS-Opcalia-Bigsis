@@ -27,7 +27,7 @@ class SignIN extends Component {
 
 
   render() {
-
+console.log(this.props)
     return (
       <Container>
         <Content>
@@ -88,8 +88,10 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (ReduxState) => {
   return {
-    afficheProps: ReduxState
+    favoritesFilm: ReduxState.favoritesFilm
   }
 }
 
-export default SignIN
+export default connect(mapStateToProps)(SignIN)
+
+

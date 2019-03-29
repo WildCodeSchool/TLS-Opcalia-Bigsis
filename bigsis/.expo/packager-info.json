@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 5140,
-  "expoServerNgrokUrl": "https://2n-hkw.anonymous.bigsis.exp.direct",
-  "packagerNgrokUrl": "https://packager.2n-hkw.anonymous.bigsis.exp.direct",
-  "ngrokPid": 5208,
+  "packagerPid": 3202,
+  "expoServerNgrokUrl": "https://t9-5hy.anonymous.bigsis.exp.direct",
+  "packagerNgrokUrl": "https://packager.t9-5hy.anonymous.bigsis.exp.direct",
+  "ngrokPid": 3333,
   "webpackServerPort": null
 }
