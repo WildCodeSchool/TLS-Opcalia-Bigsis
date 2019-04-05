@@ -18,14 +18,15 @@ class SignIN extends Component {
 
   }
 
-  _connection = () => {
+  fetchLoginToken = () => {
+    console.log("fetchToken")
     const { nickname, password } = this.state;
 
     fetch('http://172.20.10.5:5000/auth/verif', {
       method: 'POST',
       headers: {
         accept: 'application/json',
-        'Content-TYpe': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({ nickname, password })
     })
@@ -66,7 +67,7 @@ class SignIN extends Component {
               <Input onChangeText={(text) => this.setState({ password: text })} style={styles.texte} placeholder="Mot de passe" />
             </Item>
             <View style={{ marginTop: 20, flexDirection: "row", justifyContent: "center" }}>
-              <Button onPress={this._connection} rounded style={{}}>
+              <Button onPress={() => this.fetchLoginToken()} rounded style={{}}>
                 <Text style={{ fontSize: 15, color: 'white', marginLeft: 10, marginRight: 10 }}>Connection</Text>
               </Button>
 

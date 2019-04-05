@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded ({
 }));
 
 app.get('/', (res) =>{
-    console.log(res)
+    console.log("hello")
 })
 
 app.use('/auth', authRouter); //où authRouter est issu de l'importation

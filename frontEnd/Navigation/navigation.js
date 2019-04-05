@@ -7,19 +7,26 @@ const SearchStackNavigation = createStackNavigator({
   Accueil: {
     screen: Login,
     navigationOptions: {
-      title:'Accueil'
+      title: 'Acddcueil',
+      header: null
+
     }
   },
-  Register:{
-    screen:Register,
-    navigationOptions:{
-      title:'Inscription'
+  Register: {
+    screen: Register,
+    navigationOptions: {
+      title: 'Inscription',
+      header: null
+      
     }
-},
-Selection:{
-  screen:Select
+  },
+  Selection: {
+    screen: Select,
+    navigationOptions: {
+      header: null
+    }
   }
-  }
+}
 )
 
 

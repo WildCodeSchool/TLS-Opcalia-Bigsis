@@ -13,18 +13,19 @@ const mySecret = bcrypt.hashSync('c\'est secret!',10);
 router.post('/verif', (req, res) => {
 
     const { nickname, password } = req.body
-
+    console.log("/verif")
+    console.log(req.body)
     connection.query(`SELECT * FROM users WHERE nickname =(` + mysql.escape(nickname) + `)`,
         (err, results) => {
             const payload = { nickname } ;
             const token = jwt.sign(payload, mySecret);
-            // console.log('avant la comparaison')
-            if (bcrypt.compareSync(password, results[0].password)) {
+            console.log(results)
+            if (results[0] && bcrypt.compareSync(password, results[0].password)) {
                     
                     res.json({ "message": `welcome ${nickname}`, 'id': results[0].id ,  token });
             } else {
                 console.log('pass pas')
-                res.status(500).json({ "message": 'Utilisateur ou Mot de passe incorrect !'})
+                res.status(500)
             }
         })
 })
