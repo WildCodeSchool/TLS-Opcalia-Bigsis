@@ -1,13 +1,13 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Login from '../Components/SignIN'
 import Register from '../Components/SignUP'
-import Select from '../Components/Map'
+import Select from '../Components/SelectContact'
 
 const SearchStackNavigation = createStackNavigator({
   Accueil: {
     screen: Login,
     navigationOptions: {
-      title: 'Acddcueil',
+      title: 'Accueil',
       header: null
 
     }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Container, Content, Form, Item, Input, Label, View, Button, Icon, Body, CheckBox, ListItem } from 'native-base';
-import { Image, StyleSheet, Text } from 'react-native'
+import { Container, Content, Form, Item, Input, Label, View, Button, Icon, Body, CheckBox, ListItem, } from 'native-base';
+import { Image, StyleSheet, Text,PermissionsAndroid} from 'react-native'
 import { connect } from 'react-redux'
 
 
@@ -16,6 +16,15 @@ class SignIN extends Component {
 
     };
 
+  }
+
+  componentWillMount () {
+    PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
+      {
+        'title': 'Contacts',
+        'message': 'This app would like to view your contacts.'
+      })
   }
 
   fetchLoginToken = () => {
@@ -46,7 +55,7 @@ class SignIN extends Component {
 
 
   render() {
-    console.log(this.props.token)
+    
     return (
       <Container>
         <Content>
