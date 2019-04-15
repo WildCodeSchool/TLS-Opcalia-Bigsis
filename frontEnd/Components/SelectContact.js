@@ -182,7 +182,7 @@ export default class ContactList extends Component {
                 }}>
                   <TouchableOpacity style={{
                     padding: 10
-                  }} onPress={() => Alert.alert('')}>
+                  }} onPress={() => this.props.navigation.navigate("Map")}>
 
                     <Icon name="ios-paper-plane" size={30} color="white"></Icon>
                   </TouchableOpacity>
