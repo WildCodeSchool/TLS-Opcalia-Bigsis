@@ -1,7 +1,8 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import Login from '../Components/SignIN'
-import Register from '../Components/SignUP'
-import Select from '../Components/SelectContact'
+import Login from '../Components/SignIN';
+import Register from '../Components/SignUP';
+import Select from '../Components/SelectContact';
+import map from '../Components/Map';
 
 const SearchStackNavigation = createStackNavigator({
   Accueil: {
@@ -22,6 +23,12 @@ const SearchStackNavigation = createStackNavigator({
   },
   Selection: {
     screen: Select,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Map : {
+    screen: map,
     navigationOptions: {
       header: null
     }
