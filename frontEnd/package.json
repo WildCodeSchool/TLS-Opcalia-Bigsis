@@ -39,6 +39,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "jest": "24.7.1",
     "metro-react-native-babel-preset": "0.53.1",
+    "react-native-maps": "^0.24.2",
     "react-test-renderer": "16.8.3"
   },
   "jest": {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { connect } from "react-redux";
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 class Map extends Component {
@@ -16,10 +16,11 @@ class Map extends Component {
          latitudeDelta: 0.015,
          longitudeDelta: 0.0121,
        }}
-     >
-     </MapView>
+     />
+
    </View>
-);
+  )}
+}
 
 const styles = StyleSheet.create({
   container: {
