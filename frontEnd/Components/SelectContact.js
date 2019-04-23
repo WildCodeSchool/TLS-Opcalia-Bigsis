@@ -22,7 +22,7 @@ import { List, ListItem } from 'react-native-elements';
 
 export default class ContactList extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       Contact: [],
@@ -33,15 +33,15 @@ export default class ContactList extends Component {
   press = (hey) => {
     this.state.Contact.map((item) => {
       if (item.recordID === hey.recordID) {
-        item.check = !item.check
+        item.check = !item.check;
         if (item.check === true) {
           this.state.SelectedContactList.push(item);
           console.log('selected:' + item.givenName);
         } else if (item.check === false) {
-          const i = this.state.SelectedContactList.indexOf(item)
-          if (1 != -1) {
-            this.state.SelectedContactList.splice(i, 1)
-            console.log('unselect:' + item.givenName)
+          const i = this.state.SelectedContactList.indexOf(item);
+          if (1 !== -1) {
+            this.state.SelectedContactList.splice(i, 1);
+            console.log('unselect:' + item.givenName);
             return this.state.SelectedContactList
           }
         }
@@ -58,6 +58,7 @@ export default class ContactList extends Component {
     
     
   }
+
 
   componentDidMount() {
     
@@ -84,7 +85,7 @@ export default class ContactList extends Component {
         contacts.map(info => {
           info.check = false;
           return contacts;
-        })
+        });
         console.log(contacts);
         this.setState({ Contact: contacts.sort() })
       }
@@ -96,7 +97,7 @@ export default class ContactList extends Component {
   };
 
   render() {
-    console.log()
+    console.log();
     return (
       <View style={styles.container}>
         <View>
@@ -142,10 +143,10 @@ export default class ContactList extends Component {
               }}>
                 {item.check
                   ? (
-                    <Icon name="ios-checkbox" size={30} color={primaryColor}></Icon>
+                    <Icon name="ios-checkbox" size={30} color={primaryColor}/>
                   )
                   : (
-                    <Icon name="ios-checkbox" size={30} color={darkGrey}></Icon>
+                    <Icon name="ios-checkbox" size={30} color={darkGrey}/>
                   )}
               </View>
             </TouchableOpacity>
@@ -184,7 +185,7 @@ export default class ContactList extends Component {
                     padding: 10
                   }} onPress={() => Alert.alert('')}>
 
-                    <Icon name="ios-paper-plane" size={30} color="white"></Icon>
+                    <Icon name="ios-paper-plane" size={30} color="white"/>
                   </TouchableOpacity>
                 </View>
               </View>
