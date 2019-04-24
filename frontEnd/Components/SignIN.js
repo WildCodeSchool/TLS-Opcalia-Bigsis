@@ -1,37 +1,38 @@
-import React, { Component } from "react";
-import { Container, Content, Form, Item, Input, Label, View, Button, Icon, Body, CheckBox, ListItem, } from 'native-base';
-import { Image, StyleSheet, Text,PermissionsAndroid} from 'react-native'
-import { connect } from 'react-redux'
-
-
-
+import React, { Component } from 'react';
+import {
+  Container, Content, Form, Item, Input, Label, View, Button, Icon, Body, CheckBox, ListItem,
+} from 'native-base';
+import {
+  Image, StyleSheet, Text, PermissionsAndroid
+} from 'react-native';
+import { connect } from 'react-redux';
 
 
 class SignIN extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nickname: "",
-      password: ""
+      nickname: '',
+      password: ''
 
     };
-
   }
 
-  componentWillMount () {
+  componentWillMount() {
     PermissionsAndroid.request(
       PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
       {
-        'title': 'Contacts',
-        'message': 'This app would like to view your contacts.'
-      })
+        title: 'Contacts',
+        message: 'This app would like to view your contacts.'
+      }
+    );
   }
 
   fetchLoginToken = () => {
-    console.log("fetchToken")
+    console.log('fetchToken');
     const { nickname, password } = this.state;
 
-    fetch('http://172.20.10.5:5000/auth/verif', {
+    fetch('http://192.168.43.238:5000/auth/verif', {
       method: 'POST',
       headers: {
         accept: 'application/json',
@@ -42,29 +43,29 @@ class SignIN extends Component {
       .then(res => res.json())
       .then((res, err) => {
         if (res) {
-          console.log(res)
+          console.log(res);
           this.props.dispatch(
             {
-              type: "CREATE_TOKEN",
+              type: 'CREATE_TOKEN',
               token: res.token
-            })
-          return this.props.navigation.navigate("Selection")
+            }
+          );
+          return this.props.navigation.navigate('Selection');
         }
-      })
+      });
   }
 
 
   render() {
-    
     return (
       <Container>
         <Content>
-          <View style={{ alignItems: "center", justifyContent: "center" }}>
+          <View style={{ alignItems: 'center', justifyContent: 'center' }}>
             <Image
               style={{ width: 200, height: 200 }}
-              source={{ uri: "https://image.noelshack.com/fichiers/2019/13/4/1553784675-project.png" }}
+              source={{ uri: 'https://image.noelshack.com/fichiers/2019/13/4/1553784675-project.png' }}
             />
-            <Text style={{ fontSize: 60, fontStyle: "italic" }}>BIGSIS</Text>
+            <Text style={{ fontSize: 60, fontStyle: 'italic' }}>BIGSIS</Text>
 
           </View>
 
@@ -75,18 +76,30 @@ class SignIN extends Component {
             <Item style={[styles.style, { marginTop: 20 }]}>
               <Input onChangeText={(text) => this.setState({ password: text })} style={styles.texte} placeholder="Mot de passe" />
             </Item>
-            <View style={{ marginTop: 20, flexDirection: "row", justifyContent: "center" }}>
+            <View style={{ marginTop: 20, flexDirection: 'row', justifyContent: 'center' }}>
               <Button onPress={() => this.fetchLoginToken()} rounded style={{}}>
-                <Text style={{ fontSize: 15, color: 'white', marginLeft: 10, marginRight: 10 }}>Connection</Text>
+                <Text style={{
+                  fontSize: 15, color: 'white', marginLeft: 10, marginRight: 10
+                }}
+                >Connection
+                </Text>
               </Button>
 
 
             </View>
-            <View style={{ marginTop: 20, flexDirection: "row", justifyContent: "center" }}>
-              <Button rounded block danger
-                onPress={() => this.props.navigation.navigate("Register")}
-                style={{ marginTop: 15 }}>
-                <Text style={{ fontSize: 15, color: 'white', marginLeft: 10, marginRight: 10 }}>-- Inscription --</Text>
+            <View style={{ marginTop: 20, flexDirection: 'row', justifyContent: 'center' }}>
+              <Button
+                rounded
+                block
+                danger
+                onPress={() => this.props.navigation.navigate('Register')}
+                style={{ marginTop: 15 }}
+              >
+                <Text style={{
+                  fontSize: 15, color: 'white', marginLeft: 10, marginRight: 10
+                }}
+                >-- Inscription --
+                </Text>
               </Button>
             </View>
 
@@ -111,13 +124,11 @@ const styles = StyleSheet.create({
   h1: {
 
   }
-})
+});
 
 
-const mapStateToProps = (ReduxState) => {
-  return {
-    token: ReduxState
-  }
-}
+const mapStateToProps = (ReduxState) => ({
+  token: ReduxState
+});
 
-export default connect(mapStateToProps)(SignIN)
+export default connect(mapStateToProps)(SignIN);
