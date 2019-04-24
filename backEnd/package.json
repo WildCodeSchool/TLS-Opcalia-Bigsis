@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "serveur de la Wild",
   "main": "app.js",
-  "engines": {
-    "node": "9.11.2",
-    "npm": "6.8.0"
-  },
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
