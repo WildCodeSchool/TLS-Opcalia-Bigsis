@@ -1,0 +1,83 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "android": "react-native run-android",
+    "and": "react-native run-android"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.4.3",
+    "@mapbox/react-native-mapbox-gl": "^6.1.3",
+    "babel-preset-expo": "^5.1.1",
+    "native-base": "^2.12.1",
+    "react": "16.8.3",
+    "react-native": "0.59.3",
+    "react-native-contacts": "^4.0.0",
+    "react-native-contacts-wrapper": "^0.2.4",
+    "react-native-elements": "^1.1.0",
+    "react-native-gesture-handler": "^1.1.0",
+    "react-native-maps": "^0.24.0",
+    "react-native-navigation": "^2.15.0",
+    "react-native-unified-contacts": "^1.6.2",
+    "react-navigation": "^3.5.1",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.3",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "24.7.1",
+    "babel-loader": "^8.0.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-expo": "^5.0.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-react-app": "^3.0.8",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.0",
+    "jest": "24.7.1",
+    "metro-react-native-babel-preset": "0.53.1",
+    "react-test-renderer": "16.8.3",
+    "typescript": "^3.4.5"
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "env": {
+      "browser": true,
+      "jest": true,
+      "serviceworker": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+      "react/prop-types": 0,
+      "react/jsx-filename-extension": 0,
+      "react/jsx-one-expression-per-line": 0,
+      "react/prefer-stateless-function": 0,
+      "react/no-array-index-key": 0,
+      "no-param-reassign": 0,
+      "no-restricted-globals": 0,
+      "no-console": 0,
+      "comma-dangle": 0,
+      "arrow-parens": 0,
+      "no-use-before-define": [
+        "error",
+        {
+          "variables": false
+        }
+      ]
+    }
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
