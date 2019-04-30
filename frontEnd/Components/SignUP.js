@@ -17,7 +17,7 @@ import {
   ListItem
 } from 'native-base';
 import { connect } from 'react-redux';
-
+import url from './backendUrl';
 class SignUP extends Component {
   constructor(props) {
     super(props);
@@ -116,7 +116,7 @@ class SignUP extends Component {
     const subscribe = { nickname, email, password };
     console.log('fc', this.state);
     if (confirmPass === password) {
-      return fetch('http:/192.168.43.238:5000/auth/signup', {
+      return fetch(`${url}:5000/auth/signup`, {
         method: 'POST',
         headers: {
           accept: 'application/json ',

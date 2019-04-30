@@ -17,6 +17,7 @@ import {
   Image, StyleSheet, Text, PermissionsAndroid
 } from 'react-native';
 import { connect } from 'react-redux';
+import url from './backendUrl'
 
 class SignIN extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class SignIN extends Component {
     console.log('fetchToken');
     const { nickname, password } = this.state;
 
-    fetch('http://172.20.10.5:5000/auth/verif', {
+    fetch(`${url}:5000/auth/verif`, {
       method: 'POST',
       headers: {
         accept: 'application/json',
