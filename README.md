@@ -3,7 +3,7 @@ Bigsis:
 Application permettant de combattre l'insécurité et plus encore ! 
 
 Commencer l'application : 
-Installez le nécéssaire pour lancer un projet react-native voir documentations ci-dessous. 
+Installez le nécessaire pour lancer un projet react-native, voir documentations ci-dessous. 
 https://facebook.github.io/react-native/docs/getting-started
 
 Prérequis:
